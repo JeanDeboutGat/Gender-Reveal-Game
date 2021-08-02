@@ -1,0 +1,7 @@
+# dependencies
+node_modules
+
+# misc
+.vscode
+npm-debug.log*
+package-lock.json
