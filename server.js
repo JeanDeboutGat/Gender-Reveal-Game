@@ -3,6 +3,7 @@ const dotenv = require("dotenv");
 const db = require("./database/db");
 const FirstName = require("./models/name");
 const path = require("path");
+const constants = require("./config/constants");
 
 
 
@@ -20,7 +21,6 @@ app.get("/", async function (req, res) {
       res.render(`${path.join(__dirname, "views", "index.ejs")}`, {
         randomFirstName: randomFirstName,
         score: constants.INITIAL_POINTS,
-   
       });
     });
   });
@@ -50,7 +50,6 @@ app.listen(
         res.render(`${path.join(__dirname, "views", "index.ejs")}`, {
           randomFirstName: randomFirstName,
           score: score,
-       
   
         });
       });
