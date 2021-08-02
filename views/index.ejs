@@ -17,11 +17,11 @@
         <% if(score === INITIAL_SCORE && !gameHasStarted
         ){ %>
             <h2>The game has started, the goal is to reach 20 points !</h2>
-            <h2>In case of wrong gender, you lose a point, instead you win one. Let's go!!! </h2>
+            <h2>In case you choose a wrong gender, you loose a point, instead you win one. Let's go!!! </h2>
         <% } else if(score < WIN_SCORE && (score > 0) ){ %>
             <h2>The goal is to reach 20 points!</h2>
         <% } else if (score === FAILURE_SCORE){ %>
-            <h1>Failed. Persist !</h1>
+            <h1>You have missed! Persist!!!</h1>
         <% } else {%>
              <h1>Congratulations, you have won!!!! </h1>
         <% } %>
@@ -34,7 +34,7 @@
 
             <div class="score">
                 <label for= "score">score</label>
-                <input type="text" id="score" name="score" value=<%=score%>> 
+                <input type="text" id="score" name="score" value=<%=score%> readonly="readonly"> 
                </div>
 
             <div class="name-and-gender">
