@@ -6,8 +6,6 @@ const path = require("path");
 const constants = require("./config/constants");
 const GenderApi = require("gender-api.com-client");
 
-const gameHasStarted = false;
-
 dotenv.config({ path: "./config/config.env" });
 db.connectDB();
 
@@ -22,7 +20,7 @@ app.get("/", async function (req, res) {
         res.render(`${path.join(__dirname, "views", "index.ejs")}`, {
             randomFirstName: randomFirstName,
             score: constants.INITIAL_POINTS,
-            gameHasStarted: gameHasStarted
+            gameHasStarted: false
         });
     });
 });
@@ -49,7 +47,7 @@ app.post("/", async (req, res) => {
             res.render(`${path.join(__dirname, "views", "index.ejs")}`, {
                 randomFirstName: randomFirstName,
                 score: score,
-                gameHasStarted: gameHasStarted,
+                gameHasStarted: true,
 
             });
         });
@@ -62,7 +60,7 @@ app.get("/restart", async function (req, res) {
         res.render(`${path.join(__dirname, "views", "index.ejs")}`, {
             randomFirstName: randomFirstName,
             score: constants.INITIAL_POINTS,
-            gameHasStarted: gameHasStarted
+            gameHasStarted: false
 
         });
     });
