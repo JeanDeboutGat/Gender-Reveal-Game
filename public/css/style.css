@@ -6,3 +6,97 @@ body{
     flex-direction: column;
     align-items: center;
 }
+.game-title{
+  width: 80%;
+  background-color: #dbc70ed6;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+}
+
+.game-title h1{
+  width: 50%;
+  margin: 0.5em auto;
+}
+.game-description{
+  width: 80%;
+  margin: 1em 0 3em 0;
+  border: solid #dbc70ed6;
+  padding: 0.8em;
+  border-radius: 4px;
+}
+.game-body{
+ width: 80%;
+}
+.name-and-gender{
+    width: 100%;
+     display: flex;
+     justify-content: space-between;
+  }
+
+  .name-and-gender > div{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+
+  }
+
+  .name-and-gender input, select {
+    display: block;
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: inherit;
+  }
+
+  input[type=submit],[type=button]  {
+    display: block;
+    width: 30%;
+    margin: auto;
+    background-color: #dbc70ed6;
+    color: white;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: larger;
+    font-weight: bold;
+
+  }
+  input[type=button]{
+    background-color: black;
+
+  }
+  .score-and-submits{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    margin-top: 50px;
+  }
+.score{
+    font-size: inherit;
+    margin-bottom: 2em;
+}
+.score input{
+    display: block;
+    width: 4%;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: inherit;
+}
+a{
+  display: inline-block;
+  width: 100%;
+  text-decoration: none;
+}
+
+.buttons{
+  margin-top: 4em;
+}

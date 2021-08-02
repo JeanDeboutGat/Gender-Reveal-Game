@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 const constants = require("../config/constants");
 const fs = require("fs");
 const readline = require("readline");
+const FirstName = require("../models/name");
 
 const connectDB = async () => {
     try {
@@ -43,4 +44,18 @@ const saveName = (firstName) => {
     });
 };
 
-module.exports = { connectDB , createData };
+const getRandomFirstName = (fNameDocInstance) => {
+    const randomFNameIndex = Math.floor(Math.random() * constants.NAMES_LIMIT);
+    return new Promise((resolve, reject) => {
+      fNameDocInstance
+        .findOne()
+        .skip(randomFNameIndex)
+        .exec(function (err, result) {
+          resolve(result.firstName);
+          reject(new Error("get random firstname failed!"));
+        });
+    });
+  };
+  
+  
+module.exports = { connectDB , createData, getRandomFirstName };
